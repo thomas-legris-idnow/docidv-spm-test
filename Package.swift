@@ -11,17 +11,12 @@ let package = Package(
     products: [
         .library(
             name: "DocIDV",
-            targets: ["DocIDV-Target-Wrapper"]
+            targets: ["DocIDV", "FaceTecSDK", "ReadID_UI"]
         ),
         .library(
             name: "DocIDV-without-XS2A",
-            targets: ["DocIDV-without-XS2A-Target-Wrapper"]
+            targets: ["DocIDV-without-XS2A", "FaceTecSDK", "ReadID_UI"]
         )
-    ],
-    // Define external dependencies (via SPM).
-    dependencies: [
-        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "1.4.10"),
-        .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0")
     ],
     targets: [
         // Define our 2 SDK internal binaries and the 2 external ones and their location.
@@ -45,35 +40,5 @@ let package = Package(
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/FaceTecSDK.xcframework.zip",
             checksum: "c67b5f72862e59f6214707760758e9a569cc0d8a0aaffbc1d17e48a8ad2e76e5"
         )
-        // Define a wrapper which will encapsulate every dependencies in it.
-        .target(
-            name: "DocIDV-Target-Wrapper",
-            dependencies: [
-                // Local DocIDV sdk binaries.
-                "DocIDV",
-                // External frameworks saved locally.
-                "FaceTecSDK",
-                "ReadID_UI",
-                // External public frameworks.
-                .product(name: "UnisseySdk", package: "sdk-ios"),
-                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
-            ],
-            path: "sources/DocIDV" // Path to an empty .swift file, needed by SPM.
-        ),
-        // Define a wrapper for 2nd target without XS2A library.
-        .target(
-            name: "DocIDV-without-XS2A-Target-Wrapper",
-            dependencies: [
-                // Local DocIDV sdk binaries (without XS2A lib).
-                "DocIDV-without-XS2A",
-                // External frameworks saved locally.
-                "FaceTecSDK",
-                "ReadID_UI",
-                // External public frameworks.
-                .product(name: "UnisseySdk", package: "sdk-ios"),
-                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
-            ],
-            path: "sources/DocIDV-without-XS2A" // Path to another empty .swift file, needed by SPM.
-        ),
     ]
 )
