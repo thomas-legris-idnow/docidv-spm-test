@@ -12,10 +12,6 @@ let package = Package(
         .library(
             name: "DocIDV",
             targets: ["DocIDVWrapper"]
-        ),
-        .library(
-            name: "DocIDV-without-XS2A",
-            targets: ["DocIDV-without-XS2A", "FaceTecSDK", "ReadID_UI"]
         )
     ],
     dependencies: [
@@ -27,11 +23,6 @@ let package = Package(
             name: "DocIDV",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV.xcframework.zip",
             checksum: "dcb1f7003e6a185988cac818729d93e3c336d089c5832f4f19f173f3dc505941"
-        ),
-        .binaryTarget(
-            name: "DocIDV-without-XS2A",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV-without-XS2A.xcframework.zip",
-            checksum: "543b25c23ac852242bf8fb522b82924c46ed0d6aad350a1b2c82b2087e491717"
         ),
         .binaryTarget(
             name: "ReadID_UI",
@@ -49,7 +40,8 @@ let package = Package(
                  "DocIDV", 
                  "FaceTecSDK", 
                  "ReadID_UI",
-                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
+                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios"),
+
             ],
             path: "sources"
         ),
