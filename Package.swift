@@ -11,7 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "DocIDV",
-            targets: ["DocIDV", "FaceTecSDK", "ReadID_UI"]
+            targets: ["DocIDVWrapper"]
         ),
         .library(
             name: "DocIDV-without-XS2A",
@@ -40,5 +40,14 @@ let package = Package(
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/FaceTecSDK.xcframework.zip",
             checksum: "c67b5f72862e59f6214707760758e9a569cc0d8a0aaffbc1d17e48a8ad2e76e5"
         )
+        .target(
+            name: "DocIDVWrapper",
+            dependencies: [
+                 "DocIDV", 
+                 "FaceTecSDK", 
+                 "ReadID_UI"
+            ],
+            path: "sources/DocIDV"
+        ),
     ]
 )
