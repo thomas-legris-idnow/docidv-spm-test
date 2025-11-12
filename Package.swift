@@ -24,7 +24,7 @@ let package = Package(
         .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0"),
     ],
     targets: [
-        // Define our 2 SDK internal binaries and the 2 external ones and their location.
+        // Define our 2 SDK internal binaries and their location.
         .binaryTarget(
             name: "DocIDV",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV.xcframework.zip",
@@ -35,15 +35,14 @@ let package = Package(
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV-without-XS2A.xcframework.zip",
             checksum: "543b25c23ac852242bf8fb522b82924c46ed0d6aad350a1b2c82b2087e491717"
         ),
-        .binaryTarget(
-            name: "ReadID_UI",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/ReadID_UI.xcframework.zip",
-            checksum: "b7b7e112b8a0984341f6504c9bb790481ee5260dedaf3a0c38fc4b04763acc9f"
-        ),
+        // Define the third parties dependencies imported locally.
         .binaryTarget(
             name: "FaceTecSDK",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/FaceTecSDK.xcframework.zip",
-            checksum: "c67b5f72862e59f6214707760758e9a569cc0d8a0aaffbc1d17e48a8ad2e76e5"
+            path: "Frameworks/FaceTecSDK.xcframework"
+        ),
+        .binaryTarget(
+            name: "ReadID_UI",
+            path: "Frameworks/ReadID_UI.xcframework"
         ),
         // Define a wrapper which will encapsulate every dependencies in it.
         .target(
