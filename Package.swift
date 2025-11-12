@@ -28,22 +28,22 @@ let package = Package(
         .binaryTarget(
             name: "DocIDV",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV.xcframework.zip",
-            checksum: "7ed1d58ae62044d8f2ae3307aaadbee11c3f42d170b462c8fe04cd167bfc0b89"
+            checksum: "dcb1f7003e6a185988cac818729d93e3c336d089c5832f4f19f173f3dc505941"
         ),
         .binaryTarget(
             name: "DocIDV-without-XS2A",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV-without-XS2A.xcframework.zip",
-            checksum: "aca609143b6f5b423dd1ffd73a1d270f7ccad0eb1d07c2341072244b897769b3"
+            checksum: "543b25c23ac852242bf8fb522b82924c46ed0d6aad350a1b2c82b2087e491717"
         ),
         .binaryTarget(
             name: "ReadID_UI",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/ReadID_UI.xcframework.zip",
-            checksum: "bb469af2c8af0f73933d747287d5f0dd31a44d9a699c9eb0a3843c3b1f7e77c2"
+            checksum: "b7b7e112b8a0984341f6504c9bb790481ee5260dedaf3a0c38fc4b04763acc9f"
         ),
         .binaryTarget(
             name: "FaceTecSDK",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/FaceTecSDK.xcframework.zip",
-            checksum: "bb25bd0fdaf166c9ed4ee4dd7b7e36e019a2cf62581495ee780287c02f4b59b3"
+            checksum: "c67b5f72862e59f6214707760758e9a569cc0d8a0aaffbc1d17e48a8ad2e76e5"
         )
         // Define a wrapper which will encapsulate every dependencies in it.
         .target(
