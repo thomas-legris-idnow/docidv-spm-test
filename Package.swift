@@ -50,10 +50,10 @@ let package = Package(
             name: "DocIDV-Target-Wrapper",
             dependencies: [
                 // Local DocIDV sdk binaries.
-                .target(name: "DocIDV"),
+                "DocIDV",
                 // External frameworks saved locally.
-                .target(name: "FaceTecSDK"),
-                .target(name: "ReadID_UI"),
+                "FaceTecSDK",
+                "ReadID_UI",
                 // External public frameworks.
                 .product(name: "UnisseySdk", package: "sdk-ios"),
                 .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
@@ -65,10 +65,10 @@ let package = Package(
             name: "DocIDV-without-XS2A-Target-Wrapper",
             dependencies: [
                 // Local DocIDV sdk binaries (without XS2A lib).
-                .target(name: "DocIDV-without-XS2A"),
+                "DocIDV-without-XS2A",
                 // External frameworks saved locally.
-                .target(name: "FaceTecSDK"),
-                .target(name: "ReadID_UI"),
+                "FaceTecSDK",
+                "ReadID_UI",
                 // External public frameworks.
                 .product(name: "UnisseySdk", package: "sdk-ios"),
                 .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
