@@ -49,9 +49,9 @@ let package = Package(
                  "DocIDV", 
                  "FaceTecSDK", 
                  "ReadID_UI",
-                 .product(name: "UnisseySdk", package: "sdk-ios")
+                 .product(name: "UnisseySdk", package: "sdk-ios"),
             ],
-            path: "sources/DocIDV"
+            path: "sources"
         ),
     ]
 )
