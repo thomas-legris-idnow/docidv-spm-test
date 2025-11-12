@@ -19,7 +19,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0"),
+        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "1.4.9"),
     ],
     targets: [
         // Define our 2 SDK internal binaries and the 2 external ones and their location.
@@ -49,7 +49,7 @@ let package = Package(
                  "DocIDV", 
                  "FaceTecSDK", 
                  "ReadID_UI",
-                 .product(name: "UnisseySdk", package: "sdk-ios"),
+                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
             ],
             path: "sources"
         ),
