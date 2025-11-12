@@ -39,7 +39,7 @@ You will find here details about how to install, setup and work with the SDK.
 ## Requirements
 
 * **Xcode:** version 26.1 or higher.
-* **Deployment target:** iOS 14 or later.
+* **Deployment target:** iOS 14.0 or later.
 * **Swift:** 5.0
 * **NFC:** NFC-enabled smartphone. (iPhone7 or newer models)
 
@@ -52,17 +52,24 @@ Follow the next steps to integrate the DocIDV library into your application
 DocIDV sdk is only available through Swift Package Manager (SPM). 
 1. Copy the official SPM link [https://github.com/idnow/docidv-sdk-ios](https://github.com/idnow/docidv-sdk-ios)
 2. Open your application in Xcode, click on `File` then on `Add Package Dependencies` and paste docidv url.
+3. Fill the package version you want, we advice you to add the last major one by selecting "Up to Next Major Version". Click on `Add Package`
+4. Add one the 2 Package product to your application target : DocIDV or DocIDV-without-XS2A. Here is the render on Xcode on a sample project :
 
-Note that Xcode will also import several other libraries that we are using.
 
-### Configure NFC
-#### Target settings - Signing & Capabilities
+![package_target_selection](./img/package_target_selection.png)
 
-Add Near Field Communication Tag Reading as a capability
+5. Click on `Add Package`.
+
+📥 DocIDV is now imported into your project.
+Note that Xcode has also import several other libraries that we are using. You will find them in the `Package Dependencies` list on left tab.
+
+### Configure your app
+
+To work with our SDK, you need to follow next steps to configure the use of NFC and Camera.
 
 #### Entitlements file
 
-1. Create an entitlements file if you do not have one.
+1. Create an entitlements file if you do not have one (Add new file, property list, name it wih this format `my_app.entitlements`).
 2. Add an array with the key `Near Field Communication Tag Reader Session Formats`
 3. In this array, add an item:
     - key: `Item 0 (Near Field Communication Tag Reading Session Format)`
@@ -70,11 +77,16 @@ Add Near Field Communication Tag Reading as a capability
 
 #### Info.plist file
 
-1. Add an array with the key `com.apple.developer.nfc.readersession.iso7816.select-identifiers` / `ISO7816 application identifiers for NFC Tag Reader Session`.
-2. Add the following entries to this array:
+1. Open your main Info.plist file
+2. Add an array with the key `ISO7816 application identifiers for NFC Tag Reader Session`.
+3. Add the following entries to this array:
     - `A00000045645444C2D3031`
     - `A0000002471001`
-3. Add an entry for `Privacy - NFC Scan Usage Description` that describes usage of the NFC functionality to the users
+4. Add an entry for `Privacy - NFC Scan Usage Description` that describes usage of the NFC functionality to the users
+5. Add an entry for `Privacy - Camera Usage Description` that describes usage of the camera functionality to the users.
+6. Add an entry for `Privacy - Photo Library Usage Description` that describes usage of storing photo on the device.
+7. If you use video call feature, please add `Privacy - Microphone Usage Description` that describes usage of microphone in a call with agent.
+
 
 👏 You have now access to the DocIDV SDK, so let's see how to work with it.
 

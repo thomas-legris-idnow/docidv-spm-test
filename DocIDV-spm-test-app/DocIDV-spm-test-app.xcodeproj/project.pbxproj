@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		06B50C362EC4E55300DC8EE8 /* DocIDV in Frameworks */ = {isa = PBXBuildFile; productRef = 06B50C352EC4E55300DC8EE8 /* DocIDV */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		06EAA4CE2EC49C890083A014 /* DocIDV-spm-test-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocIDV-spm-test-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B50C362EC4E55300DC8EE8 /* DocIDV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = "DocIDV-spm-test-app";
 			packageProductDependencies = (
+				06B50C352EC4E55300DC8EE8 /* DocIDV */,
 			);
 			productName = "DocIDV-spm-test-app";
 			productReference = 06EAA4CE2EC49C890083A014 /* DocIDV-spm-test-app.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 06EAA4C52EC49C890083A014;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				06B50C342EC4E55300DC8EE8 /* XCRemoteSwiftPackageReference "docidv-spm-test" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 06EAA4CF2EC49C890083A014 /* Products */;
 			projectDirPath = "";
@@ -153,6 +162,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -185,6 +195,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		06B50C342EC4E55300DC8EE8 /* XCRemoteSwiftPackageReference "docidv-spm-test" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thomas-legris-idnow/docidv-spm-test";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		06B50C352EC4E55300DC8EE8 /* DocIDV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06B50C342EC4E55300DC8EE8 /* XCRemoteSwiftPackageReference "docidv-spm-test" */;
+			productName = DocIDV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06EAA4C62EC49C890083A014 /* Project object */;
 }

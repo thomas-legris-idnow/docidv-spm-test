@@ -1,0 +1,42 @@
+{
+  "originHash" : "ca20af6ee58da82616be2a32ac1bf1bb08402f11289085279f4c464a5549abfe",
+  "pins" : [
+    {
+      "identity" : "docidv-spm-test",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/thomas-legris-idnow/docidv-spm-test",
+      "state" : {
+        "revision" : "a5a8dbb6ba1dc224c1759b83b5b6991f38be33d9",
+        "version" : "1.1.0"
+      }
+    },
+    {
+      "identity" : "lottie-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-spm.git",
+      "state" : {
+        "revision" : "04f2fd18cc9404a0a0917265a449002674f24ec9",
+        "version" : "4.5.2"
+      }
+    },
+    {
+      "identity" : "sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/unissey/sdk-ios.git",
+      "state" : {
+        "revision" : "4b676e2a607977557129bae2da3062e57a1eb7e0",
+        "version" : "4.0.0"
+      }
+    },
+    {
+      "identity" : "sunflower-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/idnow/sunflower-sdk-ios.git",
+      "state" : {
+        "revision" : "d33cf9b858ff5fdcef7772720d7057b987aa74d1",
+        "version" : "1.4.10"
+      }
+    }
+  ],
+  "version" : 3
+}
