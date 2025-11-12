@@ -20,8 +20,8 @@ let package = Package(
     ],
     // Define external dependencies (via SPM).
     dependencies: [
-        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "1.4.10"),
         .package(url: "https://github.com/unissey/sdk-ios.git", from: "4.0.0"),
+        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "1.4.9"),
     ],
     targets: [
         // Define a wrapper which will encapsulate every dependencies in it.
@@ -75,4 +75,39 @@ let package = Package(
             path: "Frameworks/ReadID_UI.xcframework"
         )
     ]
+)
+
+let package = Package(
+    name: "DocIDV",
+    platforms: [.iOS(.v14)],
+    products: [
+        .library(
+            name: "DocIDV",
+            targets: [
+                "DocIDV", "FaceTecSDK", "UnisseySdk"
+            ]),
+        .library(
+            name: "DocIDV-without-XS2A",
+            targets: ["DocIDV-without-XS2A", "FaceTecSDK", "UnisseySdk"]
+        )
+    ],
+    targets: [
+        .binaryTarget(
+            name: "DocIDV",
+            path: "DocIDV/DocIDV.xcframework"
+        ),
+        .binaryTarget(
+            name: "DocIDV-without-XS2A",
+            path: "DocIDV/DocIDV-without-XS2A.xcframework"
+        ),
+        .binaryTarget(
+            name: "FaceTecSDK",
+            path: "ThirdParties/FaceTecSDK.xcframework"
+        ),
+        .binaryTarget(
+            name: "UnisseySdk",
+            path: "ThirdParties/UnisseySdk.xcframework"
+        )
+    ],
+    swiftLanguageVersions: [.v5]
 )
