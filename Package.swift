@@ -21,7 +21,7 @@ let package = Package(
     // Define external dependencies (via SPM).
     dependencies: [
         .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "1.4.10"),
-        .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0")
+        .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0"),
     ],
     targets: [
         // Define our 2 SDK internal binaries and the 2 external ones and their location.
@@ -44,7 +44,7 @@ let package = Package(
             name: "FaceTecSDK",
             url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/FaceTecSDK.xcframework.zip",
             checksum: "c67b5f72862e59f6214707760758e9a569cc0d8a0aaffbc1d17e48a8ad2e76e5"
-        )
+        ),
         // Define a wrapper which will encapsulate every dependencies in it.
         .target(
             name: "DocIDV-Target-Wrapper",
@@ -74,6 +74,6 @@ let package = Package(
                 .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
             ],
             path: "sources/DocIDV-without-XS2A" // Path to another empty .swift file, needed by SPM.
-        ),
+        )
     ]
 )
