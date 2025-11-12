@@ -18,6 +18,9 @@ let package = Package(
             targets: ["DocIDV-without-XS2A", "FaceTecSDK", "ReadID_UI"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0"),
+    ],
     targets: [
         // Define our 2 SDK internal binaries and the 2 external ones and their location.
         .binaryTarget(
@@ -45,7 +48,8 @@ let package = Package(
             dependencies: [
                  "DocIDV", 
                  "FaceTecSDK", 
-                 "ReadID_UI"
+                 "ReadID_UI",
+                 .product(name: "UnisseySdk", package: "sdk-ios")
             ],
             path: "sources/DocIDV"
         ),
