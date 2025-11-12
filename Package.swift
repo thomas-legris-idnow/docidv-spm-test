@@ -57,11 +57,13 @@ let package = Package(
         // Define our 2 SDK binaries and their location.
         .binaryTarget(
             name: "DocIDV",
-            path: "DocIDV.xcframework"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV.xcframework.zip",
+            checksum: "7ed1d58ae62044d8f2ae3307aaadbee11c3f42d170b462c8fe04cd167bfc0b89"
         ),
         .binaryTarget(
             name: "DocIDV-without-XS2A",
-            path: "DocIDV-without-XS2A.xcframework"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV-without-XS2A.xcframework.zip",
+            checksum: "aca609143b6f5b423dd1ffd73a1d270f7ccad0eb1d07c2341072244b897769b3"
         ),
         // Define the external dependencies imported locally.
         .binaryTarget(
