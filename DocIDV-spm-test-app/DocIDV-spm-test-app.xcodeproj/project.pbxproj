@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06B50C362EC4E55300DC8EE8 /* DocIDV in Frameworks */ = {isa = PBXBuildFile; productRef = 06B50C352EC4E55300DC8EE8 /* DocIDV */; };
+		06348A062EC4F0200023022C /* DocIDV in Frameworks */ = {isa = PBXBuildFile; productRef = 06348A052EC4F0200023022C /* DocIDV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06B50C362EC4E55300DC8EE8 /* DocIDV in Frameworks */,
+				06348A062EC4F0200023022C /* DocIDV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = "DocIDV-spm-test-app";
 			packageProductDependencies = (
-				06B50C352EC4E55300DC8EE8 /* DocIDV */,
+				06348A052EC4F0200023022C /* DocIDV */,
 			);
 			productName = "DocIDV-spm-test-app";
 			productReference = 06EAA4CE2EC49C890083A014 /* DocIDV-spm-test-app.app */;
@@ -114,7 +114,7 @@
 			mainGroup = 06EAA4C52EC49C890083A014;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				06B50C342EC4E55300DC8EE8 /* XCRemoteSwiftPackageReference "docidv-spm-test" */,
+				06348A042EC4F0200023022C /* XCRemoteSwiftPackageReference "docidv-spm-test" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 06EAA4CF2EC49C890083A014 /* Products */;
@@ -358,20 +358,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		06B50C342EC4E55300DC8EE8 /* XCRemoteSwiftPackageReference "docidv-spm-test" */ = {
+		06348A042EC4F0200023022C /* XCRemoteSwiftPackageReference "docidv-spm-test" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/thomas-legris-idnow/docidv-spm-test";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
+				kind = revision;
+				revision = fdfac003173c1143f40967cfc56423cc648b23b8;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		06B50C352EC4E55300DC8EE8 /* DocIDV */ = {
+		06348A052EC4F0200023022C /* DocIDV */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 06B50C342EC4E55300DC8EE8 /* XCRemoteSwiftPackageReference "docidv-spm-test" */;
+			package = 06348A042EC4F0200023022C /* XCRemoteSwiftPackageReference "docidv-spm-test" */;
 			productName = DocIDV;
 		};
 /* End XCSwiftPackageProductDependency section */

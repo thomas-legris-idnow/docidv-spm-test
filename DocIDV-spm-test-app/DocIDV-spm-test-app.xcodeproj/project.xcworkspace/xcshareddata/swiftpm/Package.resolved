@@ -6,8 +6,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/thomas-legris-idnow/docidv-spm-test",
       "state" : {
-        "revision" : "a5a8dbb6ba1dc224c1759b83b5b6991f38be33d9",
-        "version" : "1.1.0"
+        "revision" : "fdfac003173c1143f40967cfc56423cc648b23b8"
       }
     },
     {
