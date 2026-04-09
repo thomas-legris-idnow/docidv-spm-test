@@ -1,6 +1,4 @@
-// swift-tools-version:5.6
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
@@ -14,65 +12,60 @@ let package = Package(
             targets: ["DocIDV-Target-Wrapper"]
         ),
         .library(
-            name: "DocIDV-without-XS2A",
-            targets: ["DocIDV-without-XS2A-Target-Wrapper"]
+            name: "EID-Governikus",
+            targets: ["EID-Governikus-Target-Wrapper"]
         )
     ],
-    // Define external dependencies (via SPM).
     dependencies: [
-        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "1.4.10"),
-        .package(url: "https://github.com/unissey/sdk-ios.git", exact: "4.0.0"),
+        .package(url: "https://github.com/idnow/eid-sdk-ios.git", exact: "1.3.0")
     ],
     targets: [
-        // Define our 2 SDK internal binaries and their location.
+        .binaryTarget(
+            name: "DocIDVCommon",
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.2.0/DocIDVCommon.xcframework.zip",
+            checksum: "64603eb5e6ae2752a3bcc6f2539f3848fff1b74177654b8c4125fb9e816afd2c"
+        ),
         .binaryTarget(
             name: "DocIDV",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV.xcframework.zip",
-            checksum: "dcb1f7003e6a185988cac818729d93e3c336d089c5832f4f19f173f3dc505941"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.2.0/DocIDV.xcframework.zip",
+            checksum: "e42fa33815cea397dd0319501cc9e60cb37a456173b7f82f27f7b2e6723d1c8a"
         ),
         .binaryTarget(
-            name: "DocIDV-without-XS2A",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.1.0/DocIDV-without-XS2A.xcframework.zip",
-            checksum: "543b25c23ac852242bf8fb522b82924c46ed0d6aad350a1b2c82b2087e491717"
-        ),
-        // Define the third parties dependencies imported locally.
-        .binaryTarget(
-            name: "FaceTecSDK",
-            path: "Frameworks/FaceTecSDK.xcframework"
+            name: "DocIDVAIModule",
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.2.0/DocIDVAIModule.xcframework.zip",
+            checksum: "ef59d9e3771de0b7eeb1156a58dbdfb7a27ea939eefe322b3f1ffbac7f3a4b66"
         ),
         .binaryTarget(
-            name: "ReadID_UI",
-            path: "Frameworks/ReadID_UI.xcframework"
+            name: "DocIDVAI",
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.2.0/DocIDVAI.xcframework.zip",
+            checksum: "e00d7bb9a5ce515d6e293cd1cde058ade1b25f9f5617058f2bf19e6e8e3ed280"
         ),
-        // Define a wrapper which will encapsulate every dependencies in it.
+        .binaryTarget(
+            name: "DocIDVEIDGovernikusModule",
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.2.0/DocIDVEIDGovernikusModule.xcframework.zip",
+            checksum: "b63c3cc461d3d6c0b8cf9345d035af37413538c138af64711104a016e7faef79"
+        ),
         .target(
             name: "DocIDV-Target-Wrapper",
             dependencies: [
-                // Local DocIDV sdk binaries.
                 "DocIDV",
-                // External frameworks saved locally.
-                "FaceTecSDK",
-                "ReadID_UI",
-                // External public frameworks.
-                .product(name: "UnisseySdk", package: "sdk-ios"),
-                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
+                "DocIDVCommon",
+                "DocIDVAIModule",
+                "DocIDVAI"
             ],
-            path: "sources/DocIDV" // Path to an empty .swift file, needed by SPM.
+            path: "sources"
         ),
-        // Define a wrapper for 2nd target without XS2A library.
         .target(
-            name: "DocIDV-without-XS2A-Target-Wrapper",
+            name: "EID-Governikus-Target-Wrapper",
             dependencies: [
-                // Local DocIDV sdk binaries (without XS2A lib).
-                "DocIDV-without-XS2A",
-                // External frameworks saved locally.
-                "FaceTecSDK",
-                "ReadID_UI",
-                // External public frameworks.
-                .product(name: "UnisseySdk", package: "sdk-ios"),
-                .product(name: "SunflowerUIKit", package: "sunflower-sdk-ios")
+                "DocIDV",
+                "DocIDVCommon",
+                "DocIDVAIModule",
+                "DocIDVAI",
+                "DocIDVEIDGovernikusModule",
+                .product(name: "IDnowEIDGovernikus", package: "eid-sdk-ios")
             ],
-            path: "sources/DocIDV-without-XS2A" // Path to another empty .swift file, needed by SPM.
+            path: "sources-eid-governikus"
         )
     ]
 )
