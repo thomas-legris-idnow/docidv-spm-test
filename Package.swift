@@ -22,28 +22,28 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "DocIDVCommon",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.7.0/DocIDVCommon.xcframework.zip",
-            checksum: "1630bc6b4cb0292d08b4443b27e0ff6f397055032da502e4594246767d0256c1"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.8.0/DocIDVCommon.xcframework.zip",
+            checksum: "96a6d866df8ea0fb18dec9619e3cf973cb98420f75c786b9e0b416a20368378d"
         ),
         .binaryTarget(
             name: "DocIDV",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.7.0/DocIDV.xcframework.zip",
-            checksum: "91f1e9ad2259a6232781cc10efd30c945741e1bbddd6882f2393a2b36d40fcb9"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.8.0/DocIDV.xcframework.zip",
+            checksum: "c47f759b0374c318fe1fd934e71f49aca11cdb387cd2a26fe3b13cde25eeec8e"
         ),
         .binaryTarget(
             name: "DocIDVAIModule",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.7.0/DocIDVAIModule.xcframework.zip",
-            checksum: "86122e743fb47588d430dc317af18b91e45a4bb6f01c157f5ec47ea890a21de2"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.8.0/DocIDVAIModule.xcframework.zip",
+            checksum: "e48f65993c7f5e3e7ff718fc9e270dfd5f952142592cc5b633901c2198cde293"
         ),
         .binaryTarget(
             name: "DocIDVAI",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.7.0/DocIDVAI.xcframework.zip",
-            checksum: "57bff6ec238a6298d3a99cee3cbdb543e461f304aad95f64a749f88a2804c150"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.8.0/DocIDVAI.xcframework.zip",
+            checksum: "99b602c1ee8146454410f1af3da9a226014d72ec2155003011149060707eac85"
         ),
         .binaryTarget(
             name: "DocIDVEIDGovernikusModule",
-            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.7.0/DocIDVEIDGovernikusModule.xcframework.zip",
-            checksum: "ca40d4f28b2f36c919c11fc55bb0685b2a7bf81919430859ddfd621fae290bd5"
+            url: "https://github.com/thomas-legris-idnow/docidv-spm-test/releases/download/1.8.0/DocIDVEIDGovernikusModule.xcframework.zip",
+            checksum: "891cf22ac701ba8ff478fa37ec2ff9992091b25a63cb191712653bc2b18d03ba"
         ),
         .target(
             name: "DocIDV-Target-Wrapper",
